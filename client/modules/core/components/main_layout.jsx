@@ -6,12 +6,16 @@ import Detail from '../containers/detail';
 import Overview from '../containers/overview';
 import link from '../hocs/link';
 
-
 const Wrapper = styled.div`
   overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+`;
+const SliderAbout = styled.div`
+
   width: 100%;
-  height: 100%;
-  transform: ${p => p.about && css`translateY(80vh)`};
+  height: 180vh;
+  transform: ${p => !p.about && css`translateY(-80vh)`};
   transition: 0.6s;
   transition-property: transform;
 `;
@@ -21,11 +25,11 @@ const Slider = styled.div`
   transition-property: transform;
   display: flex;
   width: 180vw;
+  height: calc(100vh - 60px);
 
 `;
 const OverviewBox = styled.div`
   width: 100vw;
-  height: 100vh;
   overflow: auto;
   -webkit-overflow-scrolling: touch
   display: flex;
@@ -33,7 +37,7 @@ const OverviewBox = styled.div`
 `;
 const DetailBox = styled.div`
   width: 80vw;
-  height: 100vh;
+  height: 100%;
   overflow: auto;
   -webkit-overflow-scrolling: touch
   display: flex;
@@ -41,6 +45,7 @@ const DetailBox = styled.div`
 
 `;
 const Header = link(styled.a`
+
   height: 60px;
   display: flex;
   align-items: center;
@@ -49,29 +54,27 @@ const Header = link(styled.a`
 `);
 
 const AboutBox = styled.div`
-  top: -100%;
-  position: absolute;
-  left: 0px;
-  right: 0px;
   overflow: auto;
-  -webkit-overflow-scrolling: touch
+  -webkit-overflow-scrolling: touch;
   height: 80vh;
 `;
 const Layout = ({ projectId, about }) => (
-  <Wrapper about={about}>
-    <AboutBox><About /></AboutBox>
-    <Header routeName="about">© Sandro Wettstein 2017</Header>
-    <Slider showDetail={Boolean(projectId)}>
-      <OverviewBox projectId={projectId}>
+  <Wrapper>
+    <SliderAbout about={about}>
+      <AboutBox><About /></AboutBox>
+      <Header routeName="about">© Sandro Wettstein 2017</Header>
+      <Slider showDetail={Boolean(projectId)}>
+        <OverviewBox projectId={projectId}>
 
-        <Overview projectId={projectId} />
+          <Overview projectId={projectId} />
 
-      </OverviewBox>
+        </OverviewBox>
 
-      <DetailBox>
-        <Detail projectId={projectId} />
-      </DetailBox>
-    </Slider>
+        <DetailBox>
+          <Detail projectId={projectId} />
+        </DetailBox>
+      </Slider>
+    </SliderAbout>
   </Wrapper>
 );
 
