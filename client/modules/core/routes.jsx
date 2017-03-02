@@ -22,4 +22,13 @@ export default function (injectDeps, { localeRoutes }) {
       });
     },
   });
+
+  localeRoutes.route('/about', {
+    name: 'about',
+    action() {
+      mount(MainLayoutCtx, {
+        about: true,
+      });
+    },
+  });
 }

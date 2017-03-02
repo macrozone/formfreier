@@ -14,7 +14,10 @@ const OverviewBase = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-align-content: stretch;
+  align-content: stretch;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch
+
 `;
 OverviewBase.displayName = 'OverviewBase';
 

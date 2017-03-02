@@ -53,7 +53,6 @@ export default function () {
   const context = {
     Meteor,
     manulRouter,
-    FlowRouter,
     LocalState,
     Collections,
     // ACL,
