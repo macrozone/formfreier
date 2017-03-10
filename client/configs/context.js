@@ -5,7 +5,7 @@ import { Tracker } from 'meteor/tracker';
 
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { I18n } from '@panter/manul-i18n';
-// import { MeteorGriddle } from 'meteor/panter:meteor-griddle';
+import { MeteorGriddle } from 'meteor/panter:meteor-griddle';
 import { Roles } from 'meteor/alanning:roles';
 import { Slingshot } from 'meteor/edgee:slingshot';
 import { UploadClient } from '@panter/manul-files';
@@ -23,7 +23,7 @@ import * as Collections from '/lib/collections';
 // import * as Methods from '/lib/methods';
 // import * as Schemas from '/lib/schemas';
 
-// import createAdminContext from './create_admin_context';
+import createAdminContext from './create_admin_context';
 
 
 export default function () {
@@ -65,7 +65,7 @@ export default function () {
     Config: Collections.Config,
     Roles,
     Accounts,
-    // MeteorGriddle,
+    MeteorGriddle,
     /*uploadService: new UploadClient({ Slingshot, Directives }, {
       onAfterUpload: (error, { url, file, directiveName }) => {
         const fileMeta = _.pick(file, ['name', 'size', 'type']);
@@ -77,6 +77,6 @@ export default function () {
     */
   };
 
-  // context.adminContext = createAdminContext(context);
+  context.adminContext = createAdminContext(context);
   return context;
 }

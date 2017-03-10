@@ -1,11 +1,18 @@
 import { useDeps, composeAll, composeWithTracker, compose } from 'mantra-core';
 import { setComposerStub } from 'react-komposer';
 
-export const composer = ({ context, ...nav }, onData) => {
+export const composer = ({ context, alt, ...nav }, onData) => {
   const { manulRouter } = context();
-  onData(null, {
-    ...manulRouter.createNavItem(nav),
-  });
+  const { onClick, ...props } = manulRouter.createNavItem(nav);
+  const onClickWithStuff = (e) => {
+    if (e.altKey && alt) {
+      const altNavItem = manulRouter.createNavItem(alt);
+      altNavItem.onClick(e);
+    } else {
+      onClick(e);
+    }
+  };
+  onData(null, { onClick: onClickWithStuff, ...props });
 };
 
 export const depsMapper = (context, actions) => ({

@@ -1,35 +1,41 @@
-import React from 'react';
 import { T } from '@panter/manul-i18n';
+import React from 'react';
 import styled, { css } from 'styled-components';
 
-const DetailBase = styled.div`
+import MediumBox from '../../core/components/medium_box';
+
+const ProjectDetailBase = styled.div`
   padding: 20px;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   display: flex;
   flex-flow: row wrap;
 `;
-DetailBase.displayName = 'DetailBase';
+ProjectDetailBase.displayName = 'ProjectDetailBase';
 
 /* eslint max-len: 0 */
-const DetailDescription = styled.div`
-  flex: 4;
+const ProjectDetailDescription = styled.div`
+  flex: 3;
   padding: 20px;
 `;
 
-const DetailImage = styled.div`
+const ProjectMedia = styled.div`
   flex: 1;
   min-width: 240px;
 `;
 
-const Detail = ({ style, className, projectId }) => (
-  <DetailBase className={className} style={style}>
-    <h1>{projectId}</h1>
-    <DetailImage>
-      <img style={{ width: '100%' }} alt="arrow" src="http://sandrowettstein.ch/images/Arrow.gif" />
-    </DetailImage>
-    <DetailDescription>
+const ProjectDetail = ({ title, media }) => (
+  <ProjectDetailBase>
 
+    <ProjectMedia>
+      {
+        media.map((medium, index) => (
+          <MediumBox medium={medium} key={index} />
+        ))
+      }
+    </ProjectMedia>
+    <ProjectDetailDescription>
+      <h1>{title}</h1>
       <p>Lorem ipsum dolor sit amet, duo omnes omittam volutpat et, mei corrumpit evertitur an, commodo insolens pertinax et vis. Ignota nemore suscipit ei has. Nostro dignissim ei mei, vidit invidunt mea te. Mel te officiis urbanitas quaerendum, dictas constituam ad pri.
       </p>
       <p>
@@ -59,17 +65,17 @@ const Detail = ({ style, className, projectId }) => (
       <p>
       Et vel dolorem euripidis, vis ad omnium fuisset splendide, nostro accusamus conceptam ius eu. Ex pri appetere abhorreant. Sea te soleat incorrupte, an inani accusam inimicus nec. Persius accusamus pri at, postulant expetenda intellegebat has et, eos nemore propriae insolens in. Cum omittam phaedrum imperdiet et.
       </p>
-    </DetailDescription>
+    </ProjectDetailDescription>
 
-  </DetailBase>
+  </ProjectDetailBase>
 );
 
-Detail.propTypes = {
+ProjectDetail.propTypes = {
 };
 
-Detail.defaultProps = {
+ProjectDetail.defaultProps = {
 };
 
-Detail.displayName = 'Detail';
+ProjectDetail.displayName = 'ProjectDetail';
 
-export default Detail;
+export default ProjectDetail;

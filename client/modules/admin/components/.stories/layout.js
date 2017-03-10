@@ -1,14 +1,14 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { setComposerStub } from 'react-komposer';
-import Detail from '../detail';
+import Layout from '../layout';
 
 
-storiesOf('core.Detail', module)
-  .addWithDoc('default view', Detail,
+storiesOf('admin.Layout', module)
+  .addWithDoc('default view', Layout,
   'This is the default view',
   () => {
     return (
-      <Detail />
+      <Layout />
     );
   })
