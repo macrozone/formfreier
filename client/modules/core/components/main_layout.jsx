@@ -65,9 +65,7 @@ const Layout = ({ projectId, about }) => (
       <Header routeName="about">© Sandro Wettstein 2017</Header>
       <Slider showDetail={Boolean(projectId)}>
         <OverviewBox projectId={projectId}>
-
           <Overview projectId={projectId} />
-
         </OverviewBox>
 
         <DetailBox>

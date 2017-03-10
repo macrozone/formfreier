@@ -1,6 +1,5 @@
 import link from '../hocs/link';
 
-import Link from '../containers/link';
 
 import React from 'react';
 import { T } from '@panter/manul-i18n';
@@ -18,7 +17,7 @@ const OverviewBase = styled.div`
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   width: 100%;
-    perspective: 600px;
+  perspective: 600px;
   ${p => p.small && css`
     width: 20vw;
     margin-left: 80vw;
@@ -33,13 +32,12 @@ const ProjectItem = link(styled.a`
   display: block;
   min-height: 300px;
   flex: 1 1 400px;
-  transition: 0.6s;
+  transition: 0.3s;
   padding: 10px;
   &:hover {
-    transform: rotateY(-360deg) scale(1.2);
+    transform: rotate(-3deg) scale(1.02);
     box-shadow: 2px 2px 20px #333;
     z-index: 10;
-
   }
 `);
 
