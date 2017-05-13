@@ -3,7 +3,7 @@ import { T } from '@panter/manul-i18n';
 import styled, { css } from 'styled-components';
 
 const MediumBoxBase = styled.div`
-  padding: 10px;
+
 `;
 MediumBoxBase.displayName = 'MediumBoxBase';
 

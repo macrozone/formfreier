@@ -6,6 +6,8 @@ import theme from '/lib/theme';
 import About from './about';
 import Overview from '../containers/overview';
 import ProjectDetail from '../../project_detail/containers/project_detail';
+import ProjectEdit from '../../project_detail/containers/project_edit';
+import ProjectNew from '../../project_detail/containers/project_new';
 import link from '../hocs/link';
 
 const Wrapper = styled.div`
@@ -17,7 +19,7 @@ const SliderAbout = styled.div`
 
   width: 100%;
   height: 180vh;
-  transform: ${p => !p.about && css`translateY(-80vh)`};
+  transform: ${p => !p.showAbout && css`translateY(-80vh)`};
   transition: transform 0.6s;
 `;
 const Slider = styled.div`
@@ -42,6 +44,7 @@ const DetailBox = styled.div`
   -webkit-overflow-scrolling: touch
   display: flex;
   flex-flow: row;
+  background-color: #CDCDCD;
 
 `;
 const Header = link(styled.a`
@@ -50,6 +53,9 @@ const Header = link(styled.a`
   align-items: center;
   justify-content: center;
   display: flex;
+  box-shadow: 0px 0px 16px #999;
+  position: relative;
+  z-index: 10;
 `);
 
 const AboutBox = styled.div`
@@ -57,19 +63,24 @@ const AboutBox = styled.div`
   -webkit-overflow-scrolling: touch;
   height: 80vh;
 `;
-const Layout = ({ projectId, about }) => (
+const Layout = ({ projectId, showAbout, showCreateNew, showEdit }) => (
   <ThemeProvider theme={theme}>
     <Wrapper>
-      <SliderAbout about={about}>
+      <SliderAbout showAbout={showAbout}>
         <AboutBox><About /></AboutBox>
         <Header routeName="about">© Sandro Wettstein 2017</Header>
-        <Slider showDetail={Boolean(projectId)}>
+        <Slider showDetail={showCreateNew || Boolean(projectId)}>
           <OverviewBox projectId={projectId}>
             <Overview projectId={projectId} />
           </OverviewBox>
 
           <DetailBox>
-            <ProjectDetail projectId={projectId} />
+            {showCreateNew ? <ProjectNew /> :
+              showEdit ?
+                <ProjectEdit projectId={projectId} /> :
+                <ProjectDetail projectId={projectId} />
+            }
+
           </DetailBox>
         </Slider>
       </SliderAbout>

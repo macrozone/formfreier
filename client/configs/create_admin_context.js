@@ -11,7 +11,7 @@ import AdminLayout from '/client/modules/admin/components/layout';
 
 import adminConfig from '/admin_config';
 
-export default ({ gotoRoute, localeRoutes }) => {
+export default ({ gotoRoute, localeRoutes, LocalState }) => {
   const adminRoutes = localeRoutes.group({
     prefix: '/admin',
     name: 'admin',
@@ -22,6 +22,7 @@ export default ({ gotoRoute, localeRoutes }) => {
     Meteor,
     ValidatedMethod,
     Counts,
+    LocalState,
     config: adminConfig,
     adminRoutes,
     gotoRoute,

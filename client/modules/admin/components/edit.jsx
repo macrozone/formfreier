@@ -3,7 +3,7 @@ import { T } from '@panter/manul-i18n';
 import AutoForm from 'uniforms-antd/AutoForm';
 
 
-const DocumentEdit = ({ doc, collectionName, schema, title, destroy, gotoList, update, Alerts, preFormContent }) =>
+const DocumentEdit = ({ doc, collectionName, schema, title, destroy, gotoList, update, Alerts, preFormContent, onSuccess, onDestroySuccess }) =>
    (
      <div>
        <h2>Edit {title}</h2>
@@ -12,7 +12,7 @@ const DocumentEdit = ({ doc, collectionName, schema, title, destroy, gotoList, u
          model={doc}
          schema={schema}
          t={collectionName}
-         onSubmit={changedDoc => update(collectionName, changedDoc)}
+         onSubmit={changedDoc => update(collectionName, changedDoc, onSuccess)}
          submitLabel={<T>autoform.defaults.update</T>}
          additionalActions={[
            <button
@@ -24,7 +24,7 @@ const DocumentEdit = ({ doc, collectionName, schema, title, destroy, gotoList, u
              black onClick={() => (
              Alerts.confirm({
                message: <T>admin.destroy.confirm.message</T>,
-               onConfirm: () => destroy(collectionName, doc._id),
+               onConfirm: () => destroy(collectionName, doc._id, onDestroySuccess),
              })
 
            )}

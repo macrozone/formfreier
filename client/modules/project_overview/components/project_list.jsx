@@ -1,10 +1,11 @@
 import { T } from '@panter/manul-i18n';
+import Masonry from 'react-masonry-component';
 import React from 'react';
 import _ from 'lodash';
 import styled, { css } from 'styled-components';
 
 import ProjectListItem from './project_list_item';
-import Masonry from 'react-masonry-component';
+import ProjectListItemAddNew from '../containers/project_list_item_add_new';
 
 const ProjectListBase = styled.div`
   background-color: #eee;
@@ -21,26 +22,13 @@ const ProjectList = ({ projects }) => (
 
   <ProjectListBase>
     <Masonry>
+      <ProjectListItemAddNew />
       {
       projects.map((project, index) => (
         <ProjectListItem key={index} project={project} />
       ))
-    }
-      {
-      projects.map((project, index) => (
-        <ProjectListItem key={index} project={project} />
-      ))
-    }
-      {
-      projects.map((project, index) => (
-        <ProjectListItem key={index} project={project} />
-      ))
-    }
-      {
-      projects.map((project, index) => (
-        <ProjectListItem key={index} project={project} />
-      ))
-    }
+      }
+
     </Masonry>
   </ProjectListBase>
 

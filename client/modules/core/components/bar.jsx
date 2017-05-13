@@ -6,7 +6,7 @@ const BarBase = styled.div`
   padding: 10px;
   width: ${p => p.theme.verticalBarWidth}px;
   height: 100%;
-  background-color: #ccc;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;

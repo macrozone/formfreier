@@ -21,7 +21,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import * as Collections from '/lib/collections';
 // import Directives from '/lib/slingshot_directives';
 // import * as Methods from '/lib/methods';
-// import * as Schemas from '/lib/schemas';
+import * as Schemas from '/lib/schemas';
 
 import createAdminContext from './create_admin_context';
 
@@ -55,6 +55,7 @@ export default function () {
     manulRouter,
     LocalState,
     Collections,
+    Schemas,
     // ACL,
     // Schemas,
     // Methods,
