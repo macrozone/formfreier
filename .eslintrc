@@ -5,6 +5,7 @@
   "parserOptions": {
     "ecmaVersion": 7,
     "sourceType": "module",
+    "allowImportExportEverywhere": true,
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
       "globalReturn": true,

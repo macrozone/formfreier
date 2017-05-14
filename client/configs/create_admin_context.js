@@ -4,12 +4,9 @@ import { Counts } from 'meteor/tmeasday:publish-counts';
 import React from 'react';
 import { createAdminContext } from '@panter/manul-admin';
 
-import AdminList from '/client/modules/admin/containers/list';
-import AdminCreate from '/client/modules/admin/components/create';
-import AdminEdit from '/client/modules/admin/components/edit';
-import AdminLayout from '/client/modules/admin/components/layout';
-
 import adminConfig from '/admin_config';
+
+import LazyLoad from '/imports/modules/core/libs/lazy_load';
 
 export default ({ gotoRoute, localeRoutes, LocalState }) => {
   const adminRoutes = localeRoutes.group({
@@ -27,10 +24,10 @@ export default ({ gotoRoute, localeRoutes, LocalState }) => {
     adminRoutes,
     gotoRoute,
     components: {
-      layout: AdminLayout,
-      list: AdminList,
-      create: AdminCreate,
-      edit: AdminEdit,
+      layout: LazyLoad(import('/imports/modules/admin/components/layout')),
+      list: LazyLoad(import('/imports/modules/admin/containers/list')),
+      create: LazyLoad(import('/imports/modules/admin/components/create')),
+      edit: LazyLoad(import('/imports/modules/admin/components/edit')),
     },
   });
 };

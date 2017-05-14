@@ -4,7 +4,7 @@ import { setStubbingMode } from 'react-komposer';
 import addWithDoc from 'storybook-addon-props';
 import '/main.scss';
 import { configure, setAddon, addDecorator } from '@kadira/storybook';
-import theme from '/lib/theme';
+import theme from '/imports/api/theme';
 
 setAddon(addWithDoc);
 setStubbingMode();

@@ -1,4 +1,4 @@
-import { Projects } from '../../lib/collections';
+import { Projects } from '../../imports/api/collections';
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 

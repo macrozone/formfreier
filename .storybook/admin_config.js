@@ -1,4 +1,4 @@
-import * as Collections from '/lib/collections';
+import * as Collections from '/imports/api/collections';
 import { Roles } from 'meteor/alanning:roles';
 import React from 'react';
 import moment from 'moment';

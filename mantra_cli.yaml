@@ -2,6 +2,7 @@ tabSize: 2
 storybook: true
 generateComponentTests: false
 generateContainerTests: false
+modulesPath: imports/modules
 
 templates:
   - name: 'storybook'
@@ -54,22 +55,13 @@ templates:
       import styled, { css } from 'styled-components';
 
       const <%= componentName %>Base = styled.div`
-        padding: 10px;
-      `;
-      <%= componentName %>Base.displayName = '<%= componentName %>Base';
 
-      const <%= componentName %> = ({style}) => (
-        <<%= componentName %>Base style={style}>
+      `;
+
+      const <%= componentName %> = ({ style, className }) => (
+        <<%= componentName %>Base style={style} className={className}>
           <%= componentName %>
         </<%= componentName %>Base>
       );
-
-      <%= componentName %>.propTypes = {
-      };
-
-      <%= componentName %>.defaultProps = {
-      };
-
-      <%= componentName %>.displayName = '<%= componentName %>';
 
       export default <%= componentName %>;

@@ -11,17 +11,16 @@ import { Slingshot } from 'meteor/edgee:slingshot';
 import { UploadClient } from '@panter/manul-files';
 import ManulRouter from '@panter/manul-router';
 import TranslationStore from '@panter/manul-i18n/dist/stores/collection';
-import _ from 'lodash';
+
 import moment from 'moment';
 import momentDe from 'moment/locale/de';
-import momentFr from 'moment/locale/fr';
-
+import Directives from '/imports/api/files';
 import { ReactiveDict } from 'meteor/reactive-dict';
-// import * as ACL from '/lib/acl';
-import * as Collections from '/lib/collections';
-// import Directives from '/lib/slingshot_directives';
-// import * as Methods from '/lib/methods';
-import * as Schemas from '/lib/schemas';
+// import * as ACL from '/imports/api/acl';
+import * as Collections from '/imports/api/collections';
+// import Directives from '/imports/api/slingshot_directives';
+import * as Methods from '/imports/api/methods';
+import * as Schemas from '/imports/api/schemas';
 
 import createAdminContext from './create_admin_context';
 
@@ -29,11 +28,10 @@ import createAdminContext from './create_admin_context';
 export default function () {
   const LocalState = new ReactiveDict();
 
-  moment.defineLocale('fr', momentFr);
   moment.defineLocale('de', momentDe);
 
   const i18n = new I18n({
-    supportedLocales: ['de', 'fr'],
+    supportedLocales: ['de'],
     defaultLocale: 'de',
     useFallbackForMissing: true,
     shouldShowKeysAsFallback: () => Meteor.isDevelopment || Roles.userIsInRole(Meteor.userId(), 'admin'),
@@ -57,8 +55,7 @@ export default function () {
     Collections,
     Schemas,
     // ACL,
-    // Schemas,
-    // Methods,
+    Methods,
     Tracker,
     i18n,
     gotoRoute: manulRouter.go.bind(manulRouter),
@@ -67,15 +64,7 @@ export default function () {
     Roles,
     Accounts,
     MeteorGriddle,
-    /*uploadService: new UploadClient({ Slingshot, Directives }, {
-      onAfterUpload: (error, { url, file, directiveName }) => {
-        const fileMeta = _.pick(file, ['name', 'size', 'type']);
-        if (!error) {
-          Meteor.call('slingshot.trackUpload', { directiveName, url, fileMeta });
-        }
-      },
-    }),
-    */
+    uploadService: new UploadClient({ Slingshot, Directives }),
   };
 
   context.adminContext = createAdminContext(context);

@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 import { Roles } from 'meteor/alanning:roles';
-import * as Collections from '/lib/collections';
+import * as Collections from '/imports/api/collections';
 
 /**
 admin config is shared between clinet and server whereas
