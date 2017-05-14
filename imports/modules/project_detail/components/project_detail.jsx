@@ -17,18 +17,21 @@ const scrollBox = css`
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   height: 100%;
-  padding: 20px;
+  padding: 10px;
 `;
 
 /* eslint max-len: 0 */
 const ProjectDetailDescription = styled.div`
-  flex: 3;
+  flex: 7;
   ${scrollBox}
 `;
 
 const ProjectMedia = styled.div`
-  flex: 1;
-  min-width: 240px;
+  flex: 2;
+  @media (min-width: 641px) {
+    flex: 5;
+  };
+  min-width: 180px;
   ${scrollBox}
 `;
 

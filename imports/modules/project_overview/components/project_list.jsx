@@ -4,7 +4,6 @@ import React from 'react';
 
 import styled, { css } from 'styled-components';
 
-import IfAdmin from '../../core/containers/if_admin';
 import ProjectListItem from './project_list_item';
 import ProjectListItemAddNew from '../containers/project_list_item_add_new';
 
@@ -19,13 +18,13 @@ const ProjectListBase = styled.div`
 `;
 
 
-const ProjectList = ({ projects }) => (
+const ProjectList = ({ projects, isAdmin }) => (
 
   <ProjectListBase>
     <Masonry>
-      <IfAdmin>
-        <ProjectListItemAddNew />
-      </IfAdmin>
+
+      {isAdmin && <ProjectListItemAddNew />}
+
       {
       projects.map((project, index) => (
         <ProjectListItem key={index} project={project} />

@@ -3,10 +3,11 @@ import { setComposerStub } from 'react-komposer';
 import ProjectList from '../components/project_list.jsx';
 
 export const composer = ({ context }, onData) => {
-  const { Meteor, Collections } = context();
+  const { Meteor, Collections, Roles } = context();
   Meteor.subscribe('projects.all');
   const projects = Collections.Projects.find({}, { sort: { date: -1 } }).fetch();
-  onData(null, { projects });
+  const isAdmin = Roles.userIsInRole(Meteor.userId(), 'admin', Roles.GLOBAL_GROUP);
+  onData(null, { isAdmin, projects });
 };
 
 export const depsMapper = (context, actions) => ({

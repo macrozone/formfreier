@@ -26,10 +26,16 @@ const SliderAbout = styled.div`
 `;
 const Slider = styled.div`
   transform: ${p => p.showDetail && css`translateX(-100vw) translateX(${p.theme.verticalBarWidth}px)`};
+  @media (min-width: 641px) {
+    transform: ${p => p.showDetail && css`translateX(-100vw) translateX(${p.theme.verticalBarWidthDesktop}px)`};
+  }
   transition: transform 0.6s;
   display: flex;
   width: 200vw;
   height: calc(100vh - ${p => p.theme.horizontalBarWidth}px);
+  @media (min-width: 641px) {
+    height: calc(100vh - ${p => p.theme.horizontalBarWidthDesktop}px);
+  }
 
 `;
 const OverviewBox = styled.div`
@@ -41,6 +47,9 @@ const OverviewBox = styled.div`
 `;
 const DetailBox = styled.div`
   width: calc(100vw - ${p => p.theme.verticalBarWidth}px);
+  @media (min-width: 641px) {
+    width: calc(100vw - ${p => p.theme.verticalBarWidthDesktop}px);
+  }
   height: 100%;
   overflow: auto;
   -webkit-overflow-scrolling: touch
@@ -51,6 +60,9 @@ const DetailBox = styled.div`
 `;
 const Header = link(styled.a`
   height: ${p => p.theme.horizontalBarWidth}px;
+  @media (min-width: 641px) {
+      height: ${p => p.theme.horizontalBarWidthDesktop}px;
+  }
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,18 +83,19 @@ const Layout = ({ projectId, showAbout, showCreateNew, showEdit, showAddMedia })
       <SliderAbout showAbout={showAbout}>
         <AboutBox><About /></AboutBox>
         <Header routeName="about">© Sandro Wettstein 2017</Header>
-        <Slider showDetail={showCreateNew || Boolean(projectId)}>
+        <Slider showDetail={Boolean(projectId)}>
           <OverviewBox projectId={projectId}>
             <Overview projectId={projectId} />
+            {showCreateNew && <Modal show><ProjectNew /></Modal>}
           </OverviewBox>
 
           <DetailBox>
-            {showCreateNew ? <Modal show><ProjectNew /></Modal> :
-              showEdit &&
-                <Modal show>
-                  <ProjectEdit projectId={projectId} />
-                </Modal>
-              }
+
+            {showEdit &&
+            <Modal show>
+              <ProjectEdit projectId={projectId} />
+            </Modal>
+            }
             { showAddMedia &&
             <Modal show>
               <AddMedia projectId={projectId} />

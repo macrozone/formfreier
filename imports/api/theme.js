@@ -1,6 +1,9 @@
 
 
 export default {
-  verticalBarWidth: 60,
-  horizontalBarWidth: 60,
+  verticalBarWidth: 30,
+  verticalBarWidthDesktop: 60,
+  horizontalBarWidth: 30,
+  horizontalBarWidthDesktop: 60,
+
 };

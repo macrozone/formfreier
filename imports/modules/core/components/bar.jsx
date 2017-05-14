@@ -5,6 +5,9 @@ import styled, { css } from 'styled-components';
 const BarBase = styled.div`
   padding: 10px;
   width: ${p => p.theme.verticalBarWidth}px;
+  @media (min-width: 641px) {
+    width: ${p => p.theme.verticalBarWidthDesktop}px;
+  }
   height: 100%;
   background-color: white;
   display: flex;
