@@ -7,6 +7,7 @@ import MediaDropZone from '../containers/media_drop_zone';
 import MediumBox from '../../core/components/medium_box';
 import breakpoint from '../../../configs/breakpoint';
 
+
 const ProjectDetailBase = styled.div`
   display: flex;
   flex-flow: row wrap;
@@ -19,32 +20,64 @@ const scrollBox = css`
   padding: 10px;
 `;
 
+const Heading = styled.h2`
+  ${p => p.theme.fonts.default};
+  text-transform: uppercase;;
+  font-size: 16px;
+`;
+
+const Content = styled.p`
+  ${p => p.theme.fonts.default};
+  font-size: 16px;
+`;
+
 /* eslint max-len: 0 */
 const ProjectDetailDescription = styled.div`
-  flex: 7;
   ${scrollBox}
+  ${breakpoint('lg')`
+    flex: 7;
+    order: 2;
+  `}
 `;
 
 const ProjectMedia = styled.div`
-  flex: 2;
-  ${breakpoint('sm')`
-    flex: 5;
-  `}
   min-width: 180px;
   ${scrollBox}
+  ${breakpoint('lg')`
+    flex: 5;
+    order: 1;
+  `}
 `;
 
+const ProjectDetailFacts = styled.div`
+  ${scrollBox}
+  ${breakpoint('lg')`
+    order: 3;
+    flex-basis: 100%;
+
+  `}
+
+`;
+
+
 const ProjectMediumBox = styled(MediumBox)`
-  margin-bottom: 20px;
+  margin-bottom: ${p => p.theme.gutterV}px;
 `;
 
 const MediaDropZoneStyled = styled(MediaDropZone)`
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: ${p => p.theme.gutterV}px;
+  margin-top: ${p => p.theme.gutterV}px;
 `;
 
-const ProjectDetail = ({ _id, title, content, media = [] }) => (
+const ProjectDetail = ({ _id, title, description, facts, media = [] }) => (
   <ProjectDetailBase>
+    <ProjectDetailDescription>
+      <Heading>{title}</Heading>
+      <IfAdmin>
+        <LinkButton type="primary" routeName="project.edit" params={{ projectId: _id }} >Edit</LinkButton>
+      </IfAdmin>
+      <Content>{description}</Content>
+    </ProjectDetailDescription>
 
     <ProjectMedia>
       <IfAdmin>
@@ -55,18 +88,14 @@ const ProjectDetail = ({ _id, title, content, media = [] }) => (
         />
       </IfAdmin>
       {
-        media.reverse().map((medium, index) => (
+        [...media].reverse().map((medium, index) => (
           <ProjectMediumBox medium={medium} key={index} />
         ))
       }
     </ProjectMedia>
-    <ProjectDetailDescription>
-      <h1>{title}</h1>
-      <IfAdmin>
-        <LinkButton type="primary" routeName="project.edit" params={{ projectId: _id }} >Edit</LinkButton>
-      </IfAdmin>
-      <p>{content}</p>
-    </ProjectDetailDescription>
+    <ProjectDetailFacts>
+      <Content>{facts}</Content>
+    </ProjectDetailFacts>
 
   </ProjectDetailBase>
 );

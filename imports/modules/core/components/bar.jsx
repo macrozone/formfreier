@@ -6,9 +6,9 @@ import breakpoint from '../../../configs/breakpoint';
 const BarBase = styled.div`
   padding: 10px;
   width: ${p => p.theme.verticalBarWidth}px;
-  ${breakpoint('sm')`
+  ${breakpoint('lg')`
     width: ${p => p.theme.verticalBarWidthDesktop}px;
-  `}
+  `};
   height: 100%;
   background-color: white;
   display: flex;

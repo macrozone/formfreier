@@ -9,16 +9,23 @@ exports[`default view`] = `
   <div
     className="sc-htpNat jTKDdr">
     <div
-      className="sc-ifAKCX klVMSq">
+      className="sc-EHOje hqgubZ">
+      <h2
+        className="sc-bxivhb hZxJYm" />
+      <div
+        style={undefined} />
+      <p
+        className="sc-ifAKCX eICOjp" />
+    </div>
+    <div
+      className="sc-bZQynM iLVSft">
       <div
         style={undefined} />
     </div>
     <div
-      className="sc-bxivhb eyxEvy">
-      <h1 />
-      <div
-        style={undefined} />
-      <p />
+      className="sc-gzVnrw LIpkx">
+      <p
+        className="sc-ifAKCX eICOjp" />
     </div>
   </div>
 </div>

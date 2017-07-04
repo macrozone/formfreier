@@ -7,7 +7,7 @@ exports[`default view`] = `
     }
   }>
   <div
-    className="sc-gZMcBi kycBrY">
+    className="sc-jTzLTM LDWYz">
     <a
       alt={
         Object {
@@ -17,8 +17,9 @@ exports[`default view`] = `
           "routeName": "admin.projects.edit",
         }
       }
-      className="sc-gqjmRU ldJdJm">
-      <p>
+      className="sc-fjdhpX jUVCFD">
+      <p
+        className="sc-jzJRlG jdhDEQ">
         fudi projekt
       </p>
     </a>

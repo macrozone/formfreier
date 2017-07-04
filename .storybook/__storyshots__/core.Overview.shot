@@ -7,14 +7,14 @@ exports[`default view`] = `
     }
   }>
   <div
-    className="sc-cSHVUG fGtoJR"
+    className="sc-kGXeez fzWRnk"
     onClick={undefined}
     style={undefined}>
     <div
-      className="sc-jTzLTM kTemMP">
+      className="sc-kAzzGY eDWEBJ">
       <div>
         <div
-          className="sc-gZMcBi kycBrY">
+          className="sc-jTzLTM LDWYz">
           <a
             alt={
               Object {
@@ -24,8 +24,9 @@ exports[`default view`] = `
                 "routeName": "admin.projects.edit",
               }
             }
-            className="sc-gqjmRU ldJdJm">
-            <p>
+            className="sc-fjdhpX jUVCFD">
+            <p
+              className="sc-jzJRlG jdhDEQ">
               test projekt
             </p>
           </a>
@@ -33,9 +34,9 @@ exports[`default view`] = `
       </div>
     </div>
     <div
-      className="sc-fjdhpX hBfRTx">
+      className="sc-chPdSV bdHiew">
       <span
-        className="sc-jzJRlG kONKoS">
+        className="sc-kgoBCf dylkVW">
         Projects
       </span>
     </div>

@@ -11,13 +11,11 @@ import ProjectListItem from './project_list_item';
 import ProjectListItemAddNew from '../containers/project_list_item_add_new';
 
 const ProjectListBase = styled.div`
-  background-color: #eee;
-  padding: 5px;
-
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   width: 100%;
   perspective: 600px;
+  margin: ${p => p.theme.gutterV}px ${p => p.theme.gutterH / 2}px;
 `;
 
 

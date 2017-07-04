@@ -4,14 +4,18 @@ import breakpoint from '../../../configs/breakpoint';
 
 const ProjectListItemBase = styled.div`
   width: 100%;
+  font-size: 9vw;
   ${breakpoint('sm')`
     width: 50%;
-  `}
-  ${breakpoint('md')`
-    width: 33%;
+    font-size: 4vw;
   `}
   ${breakpoint('lg')`
+    width: 33%;
+    font-size: 2vw;
+  `}
+  ${breakpoint('xl')`
     width: 25%;
+    font-size: 1.5vw;
   `}
 `;
 

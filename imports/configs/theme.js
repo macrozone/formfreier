@@ -1,12 +1,12 @@
 import { css } from 'styled-components';
 
 export default {
-  verticalBarWidth: 30,
+  verticalBarWidth: 40,
   verticalBarWidthDesktop: 60,
-  horizontalBarWidth: 90,
+  horizontalBarWidth: 40,
   horizontalBarWidthDesktop: 60,
-  gutterV: 15,
-  gutterH: 10,
+  gutterV: 10,
+  gutterH: 15,
   fonts: {
     default: css`
       font-family: sans-serif;
@@ -15,10 +15,11 @@ export default {
   },
   colors: {
     black: 'black',
+    grey: '#CFCFCE',
   },
   paddings: {
     default: css`
-      padding: ${p => p.theme.gutterH}px ${p => p.theme.gutterV}px;
+      padding: ${p => p.theme.gutterV}px ${p => p.theme.gutterH}px;
     `,
   },
   borders: {

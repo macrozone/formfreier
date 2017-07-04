@@ -11,6 +11,7 @@ const OverviewBase = styled.div`
   display: flex;
   flex-flow: row;
   width: 100%;
+  height: 100%;
 `;
 OverviewBase.displayName = 'OverviewBase';
 

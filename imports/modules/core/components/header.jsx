@@ -15,16 +15,19 @@ const HeaderBase = link(styled.a`
   position: relative;
   z-index: 10;
   ${p => p.theme.fonts.default};
-  font-size: 6vw;
+  font-size: 5.5vw;
   color: ${p => p.theme.colors.black};
   ${p => p.theme.paddings.default};
   &:hover {
     color: ${p => p.theme.colors.black};
   }
   border-bottom: ${p => p.theme.borders.default};
-  ${breakpoint('sm')`
-    height: ${p => p.theme.horizontalBarWidthDesktop}px;
+  ${breakpoint('md')`
+    font-size: 22px;
+  `}
+  ${breakpoint('lg')`
     font-size: 32px;
+    height: ${p => p.theme.horizontalBarWidthDesktop}px;
   `}
 `);
 

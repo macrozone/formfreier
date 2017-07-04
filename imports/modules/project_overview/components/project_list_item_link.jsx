@@ -4,11 +4,10 @@ import styled, { css } from 'styled-components';
 import link from '../../core/hocs/link';
 
 const ProjectListItemLink = link(styled.a`
-  margin: 5px;
   background-color: white;
   display: block;
   transition: 0.3s;
-  padding: 10px;
+  padding: ${p => p.theme.gutterV}px ${p => p.theme.gutterH / 2}px;
   position: relative;
   &:hover {
     transform: rotate(-1deg) scale(1.1);

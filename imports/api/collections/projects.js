@@ -17,7 +17,14 @@ Projects.attachSchema(new SimpleSchema({
   },
   title: String,
   date: Date,
-  content: {
+  description: {
+    type: String,
+    optional: true,
+    uniforms: {
+      component: LongTextField,
+    },
+  },
+  facts: {
     type: String,
     optional: true,
     uniforms: {

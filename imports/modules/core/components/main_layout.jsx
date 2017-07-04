@@ -31,9 +31,9 @@ const Slider = styled.div`
   display: flex;
   width: 200vw;
   height: calc(100vh - ${p => p.theme.horizontalBarWidth}px);
-  ${breakpoint('sm')`
-    transform: ${p => p.showDetail && css`translateX(-100vw) translateX(${p.theme.verticalBarWidthDesktop}px)`};
+  ${breakpoint('lg')`
     height: calc(100vh - ${p => p.theme.horizontalBarWidthDesktop}px);
+    transform: ${p => p.showDetail && css`translateX(-100vw) translateX(${p.theme.verticalBarWidthDesktop}px)`};
   `}
 
 
@@ -48,7 +48,7 @@ const OverviewBox = styled.div`
 `;
 const DetailBox = styled.div`
   width: calc(100vw - ${p => p.theme.verticalBarWidth}px);
-  ${breakpoint('sm')`
+  ${breakpoint('lg')`
     width: calc(100vw - ${p => p.theme.verticalBarWidthDesktop}px);
   `}
   height: 100%;
@@ -56,7 +56,7 @@ const DetailBox = styled.div`
   -webkit-overflow-scrolling: touch
   display: flex;
   flex-flow: row;
-  background-color: #CDCDCD;
+  background-color: ${p => p.theme.colors.grey};
 
 `;
 
