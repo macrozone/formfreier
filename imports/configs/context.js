@@ -37,6 +37,7 @@ export default function () {
     shouldShowKeysAsFallback: () => Meteor.isDevelopment || Roles.userIsInRole(Meteor.userId(), 'admin'),
     translationStore: new TranslationStore({
       Meteor,
+      Tracker,
       ReactiveVar,
       collection: Collections.Translations,
     }),

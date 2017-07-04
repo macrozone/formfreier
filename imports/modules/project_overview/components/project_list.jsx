@@ -1,5 +1,8 @@
-import { T } from '@panter/manul-i18n';
-import Masonry from 'react-masonry-component';
+import MasonryOrg from 'react-masonry-component';
+
+import ifNotTest from '../../core/hocs/if_not_test';
+
+const Masonry = ifNotTest(MasonryOrg, 'div');
 import React from 'react';
 
 import styled, { css } from 'styled-components';
@@ -36,12 +39,5 @@ const ProjectList = ({ projects, isAdmin }) => (
 
 );
 
-ProjectList.propTypes = {
-};
-
-ProjectList.defaultProps = {
-};
-
-ProjectList.displayName = 'ProjectList';
 
 export default ProjectList;

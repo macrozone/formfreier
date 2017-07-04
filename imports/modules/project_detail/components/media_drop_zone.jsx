@@ -13,7 +13,7 @@ const MediaDropZoneBase = styled.div`
 `;
 MediaDropZoneBase.displayName = 'MediaDropZoneBase';
 
-const MediaDropZone = ({ style, className, fileRestrictions, addMedia, progress, status }) => (
+const MediaDropZone = ({ style, className, fileRestrictions = { allowedFileTypes: [] }, addMedia, progress, status }) => (
   <MediaDropZoneBase style={style} className={className}>
     <DropZone
       accept={fileRestrictions.allowedFileTypes.join(',')}

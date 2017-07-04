@@ -1,13 +1,14 @@
 import React from 'react';
-import { T } from '@panter/manul-i18n';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+
+import breakpoint from '../../../configs/breakpoint';
 
 const BarBase = styled.div`
   padding: 10px;
   width: ${p => p.theme.verticalBarWidth}px;
-  @media (min-width: 641px) {
+  ${breakpoint('sm')`
     width: ${p => p.theme.verticalBarWidthDesktop}px;
-  }
+  `}
   height: 100%;
   background-color: white;
   display: flex;

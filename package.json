@@ -5,13 +5,13 @@
   "scripts": {
     "lint": "eslint --cache ./imports ./client ./server --ext=jsx --ext=js",
     "lint-fix": "eslint --cache ./imports ./client ./server --ext=jsx --ext=js --fix",
-    "precommit": "npm run lint && npm run test-storybook",
+    "precommit": "yarn lint && yarn test-storybook",
     "storybook": "start-storybook -p 9001 -s ./public",
     "chimp-watch": "chimp .config/chimp.js --mocha --ddp=http://localhost:3000 --watch --path=tests",
     "chimp": "chimp .config/chimp.js --mocha --ddp=http://localhost:3000 --path=tests",
     "ci": ".scripts/chimp.js",
     "test-storybook": "NODE_ENV=test storyshots",
-    "update-storybook-tests": "npm run test-storybook -- -u",
+    "update-storybook-tests": "yarn test-storybook -- -u",
     "cordova-icon": "meteor-cordova-icon",
     "cordova-splash": "meteor-cordova-splash"
   },
@@ -22,7 +22,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@panter/manul-admin": "/Users/macrozone/git/panter/npm/manul-admin",
+    "@panter/manul-admin": "^0.7.2",
     "@panter/manul-alerts": "^0.1.1",
     "@panter/manul-files": "0.0.3",
     "@panter/manul-i18n": "^0.4.2",
@@ -30,11 +30,13 @@
     "antd": "^2.10.0",
     "bcrypt": "^0.8.7",
     "blueimp-canvas-to-blob": "^3.6.0",
+    "bootstrap": "^4.0.0-alpha.6",
     "griddle-react": "^0.5.1",
     "lodash": "^4.17.4",
     "mantra-core": "^1.2.0",
     "mime-types": "^2.1.14",
     "moment": "^2.17.1",
+    "node-message-box": "https://github.com/nuxlli/node-message-box.git#7ee2400fec6a7ceae004d2bc7aa98ec8f27a95a1",
     "rc-progress": "^2.1.1",
     "react": "^15.4.2",
     "react-addons-pure-render-mixin": "^15.4.1",
@@ -49,9 +51,10 @@
     "react-simple-di": "^1.0.1",
     "recompose": "^0.21.2",
     "simpl-schema": "^0.2.3",
-    "styled-components": "^1.4.3",
+    "styled-components": "^2.1.0",
+    "styled-components-breakpoint": "^1.0.1",
     "uniforms": "^1.14.0",
-    "uniforms-antd": "^1.14.0"
+    "uniforms-bootstrap4": "^1.14.0"
   },
   "devDependencies": {
     "@kadira/storybook": "~2.35.3",

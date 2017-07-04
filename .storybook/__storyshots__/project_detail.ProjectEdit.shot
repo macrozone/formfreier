@@ -1,0 +1,17 @@
+exports[`default view`] = `
+<div
+  style={
+    Object {
+      "height": "100vh",
+      "width": "100vw",
+    }
+  }>
+  <div
+    className="sc-htoDjs jleGjy"
+    style={undefined}>
+    <span>
+      <UseDeps(Container(Container(ChildComponent))) />
+    </span>
+  </div>
+</div>
+`;

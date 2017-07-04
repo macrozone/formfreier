@@ -1,6 +1,6 @@
 import 'uniforms';
 
-import LongTextField from 'uniforms-antd/LongTextField';
+import LongTextField from 'uniforms-bootstrap4/LongTextField';
 import SimpleSchema from 'simpl-schema';
 import Media from '../schemas/media';
 import { Mongo } from 'meteor/mongo';

@@ -20,7 +20,10 @@ const ProjectListContainer = composeAll(
 )(ProjectList);
 
 setComposerStub(ProjectListContainer, ({ }) => ({
-
+  projects: [{
+    _id: 'test',
+    title: 'test projekt',
+  }],
 }));
 
 export default ProjectListContainer;

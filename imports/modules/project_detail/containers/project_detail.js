@@ -4,9 +4,11 @@ import ProjectDetail from '../components/project_detail.jsx';
 
 export const composer = ({ context, projectId }, onData) => {
   const { Meteor, Collections } = context();
-  Meteor.subscribe('projects.one', projectId);
-  const project = Collections.Projects.findOne(projectId);
-  onData(null, project);
+  if (projectId) {
+    Meteor.subscribe('projects.one', projectId);
+    const project = Collections.Projects.findOne(projectId);
+    onData(null, project);
+  }
 };
 
 export const depsMapper = (context, actions) => ({

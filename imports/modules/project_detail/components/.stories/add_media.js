@@ -1,14 +1,13 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import { setComposerStub } from 'react-komposer';
-import AddMedia from '../add_media';
 
+import { storiesOf } from '@kadira/storybook';
+
+import AddMedia from '../add_media';
+import SimpleSchema from 'simpl-schema';
 
 storiesOf('project_detail.AddMedia', module)
   .addWithDoc('default view', AddMedia,
   'This is the default view',
-  () => {
-    return (
-      <AddMedia />
-    );
-  })
+  () => (
+    <AddMedia schema={new SimpleSchema({})} />
+    ));

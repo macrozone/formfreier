@@ -1,12 +1,11 @@
-import { T } from '@panter/manul-i18n';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
 import IfAdmin from '../../core/containers/if_admin';
-
 import LinkButton from '../../core/containers/link_button';
 import MediaDropZone from '../containers/media_drop_zone';
 import MediumBox from '../../core/components/medium_box';
+import breakpoint from '../../../configs/breakpoint';
 
 const ProjectDetailBase = styled.div`
   display: flex;
@@ -28,9 +27,9 @@ const ProjectDetailDescription = styled.div`
 
 const ProjectMedia = styled.div`
   flex: 2;
-  @media (min-width: 641px) {
+  ${breakpoint('sm')`
     flex: 5;
-  };
+  `}
   min-width: 180px;
   ${scrollBox}
 `;

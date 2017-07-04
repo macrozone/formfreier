@@ -7,12 +7,12 @@ import DropZone from 'react-dropzone';
 import React from 'react';
 import _ from 'lodash';
 
-import ErrorField from 'uniforms-antd/ErrorField';
+import ErrorField from 'uniforms-bootstrap4/ErrorField';
 
 import Link from '/client/modules/core/components/link';
 import styled from 'styled-components';
 
-import wrapField from 'uniforms-antd/wrapField';
+import wrapField from 'uniforms-bootstrap4/wrapField';
 
 
 const enhance = composeAll(

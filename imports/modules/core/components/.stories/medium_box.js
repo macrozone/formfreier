@@ -7,8 +7,6 @@ import MediumBox from '../medium_box';
 storiesOf('core.MediumBox', module)
   .addWithDoc('default view', MediumBox,
   'This is the default view',
-  () => {
-    return (
-      <MediumBox />
-    );
-  })
+  () => (
+    <MediumBox medium={{ fileUrl: 'asdf.com' }} />
+    ));

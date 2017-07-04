@@ -1,0 +1,25 @@
+exports[`default view`] = `
+<div
+  style={
+    Object {
+      "height": "100vh",
+      "width": "100vw",
+    }
+  }>
+  <div
+    className="sc-htpNat jTKDdr">
+    <div
+      className="sc-ifAKCX klVMSq">
+      <div
+        style={undefined} />
+    </div>
+    <div
+      className="sc-bxivhb eyxEvy">
+      <h1 />
+      <div
+        style={undefined} />
+      <p />
+    </div>
+  </div>
+</div>
+`;

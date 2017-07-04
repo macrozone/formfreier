@@ -1,0 +1,22 @@
+exports[`default view`] = `
+<div
+  style={
+    Object {
+      "height": "100vh",
+      "width": "100vw",
+    }
+  }>
+  <div
+    className="sc-bwzfXH hcmPLH"
+    style={undefined}>
+    <img
+      role="presentation"
+      src="asdf.com"
+      style={
+        Object {
+          "width": "100%",
+        }
+      } />
+  </div>
+</div>
+`;

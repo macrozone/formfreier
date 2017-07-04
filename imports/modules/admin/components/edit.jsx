@@ -1,6 +1,6 @@
 import React from 'react';
 import { T } from '@panter/manul-i18n';
-import AutoForm from 'uniforms-antd/AutoForm';
+import AutoForm from 'uniforms-bootstrap4/AutoForm';
 
 
 const DocumentEdit = ({ doc, collectionName, schema, title, destroy, gotoList, update, Alerts, preFormContent, onSuccess, onDestroySuccess }) =>

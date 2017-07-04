@@ -1,0 +1,13 @@
+exports[`default view`] = `
+<div
+  style={
+    Object {
+      "height": "100vh",
+      "width": "100vw",
+    }
+  }>
+  <div
+    className="sc-iwsKbI ctOFVB"
+    style={undefined} />
+</div>
+`;

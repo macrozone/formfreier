@@ -1,4 +1,4 @@
-import { AutoForm } from 'uniforms-antd';
+import { AutoForm } from 'uniforms-bootstrap4';
 import { T } from '@panter/manul-i18n';
 import React from 'react';
 import styled, { css } from 'styled-components';

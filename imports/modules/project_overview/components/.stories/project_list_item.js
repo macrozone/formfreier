@@ -7,8 +7,11 @@ import ProjectListItem from '../project_list_item';
 storiesOf('project_overview.ProjectListItem', module)
   .addWithDoc('default view', ProjectListItem,
   'This is the default view',
-  () => {
-    return (
-      <ProjectListItem />
-    );
-  })
+  () => (
+    <ProjectListItem
+      project={{
+        _id: 'bla',
+        title: 'fudi projekt',
+      }}
+    />
+    ));

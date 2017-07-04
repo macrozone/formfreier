@@ -1,6 +1,7 @@
 
 import { T } from '@panter/manul-i18n';
 import styled, { css } from 'styled-components';
+import { getOr } from 'lodash/fp';
 
 const ButtonGroup = styled.div`
   margin-bottom: 20px;
@@ -8,7 +9,7 @@ const ButtonGroup = styled.div`
   margin-right: -5px;
   display: flex;
   overflow: visible;
-  justify-content: ${p => p.children.length > 1 ? 'space-between' : 'center'};
+  justify-content: ${p => getOr(0, 'children.length', p) > 1 ? 'space-between' : 'center'};
   flex-flow: row wrap;
   & > * {
     margin-left: 5px;

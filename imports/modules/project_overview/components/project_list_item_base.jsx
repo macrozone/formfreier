@@ -1,18 +1,18 @@
-import React from 'react';
-import { T } from '@panter/manul-i18n';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+
+import breakpoint from '../../../configs/breakpoint';
 
 const ProjectListItemBase = styled.div`
   width: 100%;
-  @media (min-width: 641px) {
+  ${breakpoint('sm')`
     width: 50%;
-  }
-  @media (min-width: 768px) {
+  `}
+  ${breakpoint('md')`
     width: 33%;
-  }
-  @media (min-width: 1025px) {
+  `}
+  ${breakpoint('lg')`
     width: 25%;
-  }
+  `}
 `;
 
 export default ProjectListItemBase;

@@ -1,5 +1,5 @@
 import { createApp } from 'mantra-core';
-import initContext from './configs/context';
+import initContext from '../imports/configs/context';
 
 // modules
 import coreModule from '../imports/modules/core';
@@ -8,7 +8,7 @@ import adminModule from '../imports/modules/admin';
 import projectDetailModule from '../imports/modules/project_detail';
 import { adminModule as manulAdminModule } from '@panter/manul-admin';
 
-import 'antd/dist/antd.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 // init context
 const context = initContext();
