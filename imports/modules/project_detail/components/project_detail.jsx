@@ -17,7 +17,7 @@ const scrollBox = css`
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   height: 100%;
-  padding: 10px;
+  ${p => p.theme.paddings.default};
 `;
 
 const Heading = styled.h2`
