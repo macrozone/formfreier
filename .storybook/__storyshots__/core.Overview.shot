@@ -1,0 +1,44 @@
+exports[`default view`] = `
+<div
+  style={
+    Object {
+      "height": "100vh",
+      "width": "100vw",
+    }
+  }>
+  <div
+    className="sc-cSHVUG fGtoJR"
+    onClick={undefined}
+    style={undefined}>
+    <div
+      className="sc-jTzLTM kTemMP">
+      <div>
+        <div
+          className="sc-gZMcBi kycBrY">
+          <a
+            alt={
+              Object {
+                "params": Object {
+                  "_id": "test",
+                },
+                "routeName": "admin.projects.edit",
+              }
+            }
+            className="sc-gqjmRU ldJdJm">
+            <p>
+              test projekt
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fjdhpX hBfRTx">
+      <span
+        className="sc-jzJRlG kONKoS">
+        Projects
+      </span>
+    </div>
+  </div>
+</div>
+`;
