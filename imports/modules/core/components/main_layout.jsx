@@ -22,7 +22,7 @@ const SliderAbout = styled.div`
 
   width: 100%;
   height: 180vh;
-  transform: ${p => !p.showAbout && css`translateY(-80vh)`};
+  transform: ${p => !p.showAbout && css`translateY(calc(-100vh + ${p.theme.horizontalBarWidthDesktop}px))`};
   transition: transform 0.6s;
 `;
 const Slider = styled.div`
@@ -63,7 +63,7 @@ const DetailBox = styled.div`
 const AboutBox = styled.div`
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  height: 80vh;
+  height: calc(100vh - ${p => p.theme.horizontalBarWidthDesktop}px);
 `;
 const Layout = ({ projectId, showAbout, showCreateNew, showEdit, showAddMedia }) => (
   <ThemeProvider theme={theme}>

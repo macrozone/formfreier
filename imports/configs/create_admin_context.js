@@ -24,10 +24,10 @@ export default ({ gotoRoute, localeRoutes, LocalState }) => {
     adminRoutes,
     gotoRoute,
     components: {
-      layout: LazyLoad(import('/imports/modules/admin/components/layout')),
-      list: LazyLoad(import('/imports/modules/admin/containers/list')),
-      create: LazyLoad(import('/imports/modules/admin/components/create')),
-      edit: LazyLoad(import('/imports/modules/admin/components/edit')),
+      layout: LazyLoad(() => import('/imports/modules/admin/components/layout')),
+      list: LazyLoad(() => import('/imports/modules/admin/containers/list')),
+      create: LazyLoad(() => import('/imports/modules/admin/components/create')),
+      edit: LazyLoad(() => import('/imports/modules/admin/components/edit')),
     },
   });
 };

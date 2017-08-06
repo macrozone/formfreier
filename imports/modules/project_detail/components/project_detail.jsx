@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+import ContentArea from '../../cm/components/content_area';
 import IfAdmin from '../../core/containers/if_admin';
 import LinkButton from '../../core/containers/link_button';
 import MediaDropZone from '../containers/media_drop_zone';
@@ -26,10 +27,6 @@ const Heading = styled.h2`
   font-size: 16px;
 `;
 
-const Content = styled.p`
-  ${p => p.theme.fonts.default};
-  font-size: 16px;
-`;
 
 /* eslint max-len: 0 */
 const ProjectDetailDescription = styled.div`
@@ -69,14 +66,14 @@ const MediaDropZoneStyled = styled(MediaDropZone)`
   margin-top: ${p => p.theme.gutterV}px;
 `;
 
-const ProjectDetail = ({ _id, title, description, facts, media = [] }) => (
+const ProjectDetail = ({ _id, title, media = [] }) => (
   <ProjectDetailBase>
     <ProjectDetailDescription>
       <Heading>{title}</Heading>
       <IfAdmin>
         <LinkButton type="primary" routeName="project.edit" params={{ projectId: _id }} >Edit</LinkButton>
       </IfAdmin>
-      <Content>{description}</Content>
+      <ContentArea contentId={`description_${_id}`} />
     </ProjectDetailDescription>
 
     <ProjectMedia>
@@ -94,7 +91,7 @@ const ProjectDetail = ({ _id, title, description, facts, media = [] }) => (
       }
     </ProjectMedia>
     <ProjectDetailFacts>
-      <Content>{facts}</Content>
+      <ContentArea contentId={`facts_${_id}`} />
     </ProjectDetailFacts>
 
   </ProjectDetailBase>

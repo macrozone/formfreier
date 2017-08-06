@@ -20,13 +20,7 @@ const OrderedListWrapper = styled.ul`
 
 const ListItem = styled.li`
   margin-left: 25px;
-  ${p => p.theme.fontCopy};
-`;
-
-const Lead = styled.p`
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.4;
-  font-size: 120%;
+  ${p => p.theme.fonts.default};
 `;
 
 // see https://draftjs.org/docs/advanced-topics-custom-block-render-map.html
@@ -35,7 +29,7 @@ export default DraftJS.DefaultDraftBlockRenderMap.merge(
     unstyled: {
       element: styled.div`
         margin-bottom: ${p => p.theme.paragraphMargin}px;
-        ${p => p.theme.fontCopy};
+        ${p => p.theme.fonts.default};
       `,
       aliasedElements: ['p'],
     },
@@ -54,10 +48,6 @@ export default DraftJS.DefaultDraftBlockRenderMap.merge(
     },
     'header-two': {
       element: Heading2,
-    },
-
-    lead: {
-      element: Lead,
     },
     atomic: {
       element: styled.figure`
