@@ -7,25 +7,27 @@ exports[`default view`] = `
     }
   }>
   <div
-    className="sc-htpNat jTKDdr">
+    className="sc-iwsKbI dKppOi">
     <div
-      className="sc-EHOje dEnAQc">
+      className="sc-gqjmRU dzOjLD">
       <h2
-        className="sc-bxivhb hZxJYm" />
+        className="sc-gZMcBi gmoNsr" />
       <div
         style={undefined} />
-      <p
-        className="sc-ifAKCX eICOjp" />
+      <span>
+        <onlyUpdateForKeys(UseDeps(Container(Container(Container(withState(withProps(withHandlers(withPropsOnChange(Container(ContentArea)))))))))) />
+      </span>
     </div>
     <div
-      className="sc-bZQynM gzhRLb">
+      className="sc-VigVT jpjKCT">
       <div
         style={undefined} />
     </div>
     <div
-      className="sc-gzVnrw bceAQJ">
-      <p
-        className="sc-ifAKCX eICOjp" />
+      className="sc-jTzLTM eIMDvN">
+      <span>
+        <onlyUpdateForKeys(UseDeps(Container(Container(Container(withState(withProps(withHandlers(withPropsOnChange(Container(ContentArea)))))))))) />
+      </span>
     </div>
   </div>
 </div>

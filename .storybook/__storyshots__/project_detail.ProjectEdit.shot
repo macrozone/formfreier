@@ -7,7 +7,7 @@ exports[`default view`] = `
     }
   }>
   <div
-    className="sc-gZMcBi diHvSQ"
+    className="sc-kAzzGY fXHSOY"
     style={undefined}>
     <span>
       <UseDeps(Container(Container(ChildComponent))) />

@@ -7,7 +7,7 @@ exports[`default view`] = `
     }
   }>
   <div
-    className="sc-hSdWYo jxEfEq"
+    className="sc-kkGfuU crWhOW"
     style={undefined}>
     <span>
       <onlyUpdateForKeys(UseDeps(Container(Container(Container(withState(withProps(withHandlers(withPropsOnChange(Container(ContentArea)))))))))) />

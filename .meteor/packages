@@ -32,3 +32,4 @@ edgee:slingshot
 aldeed:schema-deny
 panter:meteor-griddle
 dynamic-import@0.1.1
+accounts-google

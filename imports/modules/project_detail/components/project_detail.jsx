@@ -12,6 +12,7 @@ import breakpoint from '../../../configs/breakpoint';
 const ProjectDetailBase = styled.div`
   display: flex;
   flex-flow: row wrap;
+  width: 100%;
 `;
 
 const scrollBox = css`

@@ -24,7 +24,7 @@
   "dependencies": {
     "@panter/manul-admin": "^0.7.2",
     "@panter/manul-alerts": "^0.1.1",
-    "@panter/manul-draft": "^0.0.8",
+    "@panter/manul-draft": "beta",
     "@panter/manul-files": "0.0.3",
     "@panter/manul-i18n": "^0.4.12",
     "@panter/manul-router": "^0.2.3",
@@ -54,8 +54,8 @@
     "simpl-schema": "^0.2.3",
     "styled-components": "^2.1.0",
     "styled-components-breakpoint": "^1.0.1",
-    "uniforms": "^1.14.0",
-    "uniforms-bootstrap4": "^1.14.0"
+    "uniforms": "^1.19.1",
+    "uniforms-bootstrap4": "^1.19.1"
   },
   "devDependencies": {
     "@kadira/storybook": "~2.35.3",

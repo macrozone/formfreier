@@ -42,7 +42,7 @@ const Slider = styled.div`
 const OverviewBox = styled.div`
   width: 100vw;
   overflow: auto;
-  -webkit-overflow-scrolling: touch
+  -webkit-overflow-scrolling: touch;
   display: flex;
   flex-flow: row;
 `;
@@ -53,7 +53,7 @@ const DetailBox = styled.div`
   `}
   height: 100%;
   overflow: auto;
-  -webkit-overflow-scrolling: touch
+  -webkit-overflow-scrolling: touch;
   display: flex;
   flex-flow: row;
   background-color: ${p => p.theme.colors.grey};

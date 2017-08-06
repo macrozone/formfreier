@@ -7,10 +7,10 @@ exports[`default view`] = `
     }
   }>
   <div
-    className="sc-jTzLTM LDWYz"
+    className="sc-kGXeez gJKHtT"
     style={undefined}>
     <a
-      className="sc-cSHVUG sYJkl sc-fjdhpX jUVCFD">
+      className="sc-ckVGcZ dQnVEB sc-kpOJdX eyNrvO">
       + create new project
     </a>
   </div>

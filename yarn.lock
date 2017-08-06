@@ -131,14 +131,17 @@
     react-notification "^6.6.0"
     recompose "^0.21.2"
 
-"@panter/manul-draft@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@panter/manul-draft/-/manul-draft-0.0.8.tgz#262d9df740e994095a07ff854a4d7328514fcce4"
+"@panter/manul-draft@beta":
+  version "0.1.0-beta1"
+  resolved "https://registry.yarnpkg.com/@panter/manul-draft/-/manul-draft-0.1.0-beta1.tgz#cf3455596094e3581996a954f4b2da6bb7d615c6"
   dependencies:
     immutable "^3.8.1"
     megadraft "^0.4.26"
     react-draggable "^2.2.6"
     react-measure "^1.4.6"
+    react-overlays "^0.8.0"
+    react-rnd "^5.0.9"
+    recompose "^0.24.0"
 
 "@panter/manul-files@0.0.3":
   version "0.0.3"
@@ -1687,6 +1690,10 @@ chai@3.x.x, chai@~3.5.0:
     deep-eql "^0.1.3"
     type-detect "^1.0.0"
 
+chain-function@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/chain-function/-/chain-function-1.0.0.tgz#0d4ab37e7e18ead0bdc47b920764118ce58733dc"
+
 chalk@^1.0.0, chalk@^1.1.0, chalk@^1.1.1, chalk@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
@@ -2505,7 +2512,7 @@ doctrine@^2.0.0:
     esutils "^2.0.2"
     isarray "^1.0.0"
 
-dom-helpers@^3.2.0:
+dom-helpers@^3.2.0, dom-helpers@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.2.1.tgz#3203e07fed217bd1f424b019735582fc37b2825a"
 
@@ -6409,7 +6416,7 @@ react-dom@^15.4.2:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
-react-draggable@^2.2.6:
+react-draggable@^2.2.3, react-draggable@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/react-draggable/-/react-draggable-2.2.6.tgz#3a806e10f2da6babfea4136be6510e89b0d76901"
   dependencies:
@@ -6527,6 +6534,17 @@ react-overlays@^0.7.0:
     react-prop-types "^0.4.0"
     warning "^3.0.0"
 
+react-overlays@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-0.8.0.tgz#55359421735da2c0d8e235f780c9f9f3b16bc2f2"
+  dependencies:
+    classnames "^2.2.5"
+    dom-helpers "^3.2.1"
+    prop-types "^15.5.10"
+    prop-types-extra "^1.0.1"
+    react-transition-group "^2.0.0-beta.0"
+    warning "^3.0.0"
+
 react-portal@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/react-portal/-/react-portal-3.1.0.tgz#865c44fb72a1da106c649206936559ce891ee899"
@@ -6547,6 +6565,19 @@ react-rectangle@^1.3.3:
     lodash.isfinite "^3.2.1"
     lodash.isnan "^3.0.2"
     lodash.isstring "^4.0.1"
+
+react-resizable-box@^2.0.3:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/react-resizable-box/-/react-resizable-box-2.0.6.tgz#c6fbd7c0bac7a6678eb32d0993cab7b601bea8e7"
+  dependencies:
+    lodash.isequal "^4.5.0"
+
+react-rnd@^5.0.9:
+  version "5.0.9"
+  resolved "https://registry.yarnpkg.com/react-rnd/-/react-rnd-5.0.9.tgz#6b7b2e69e7ae23060917cb037774f15c83086606"
+  dependencies:
+    react-draggable "^2.2.3"
+    react-resizable-box "^2.0.3"
 
 react-simple-di@^1.0.1, react-simple-di@^1.2.0:
   version "1.2.0"
@@ -6575,6 +6606,17 @@ react-test-renderer@^15.3.1:
   dependencies:
     fbjs "^0.8.9"
     object-assign "^4.1.0"
+
+react-transition-group@^2.0.0-beta.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.2.0.tgz#793bf8cb15bfe91b3101b24bce1c1d2891659575"
+  dependencies:
+    chain-function "^1.0.0"
+    classnames "^2.2.5"
+    dom-helpers "^3.2.0"
+    loose-envify "^1.3.1"
+    prop-types "^15.5.8"
+    warning "^3.0.0"
 
 react-window-dimensions@^1.0.1:
   version "1.0.1"
@@ -6678,6 +6720,15 @@ rechoir@^0.6.2:
 recompose@^0.21.0, recompose@^0.21.2:
   version "0.21.2"
   resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.21.2.tgz#ff3fbdb2397b1c77c47d451be2a63b9295d44681"
+  dependencies:
+    change-emitter "^0.1.2"
+    fbjs "^0.8.1"
+    hoist-non-react-statics "^1.0.0"
+    symbol-observable "^1.0.4"
+
+recompose@^0.24.0:
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.24.0.tgz#262e93f974439eb17e7779824d88cce90492a5dd"
   dependencies:
     change-emitter "^0.1.2"
     fbjs "^0.8.1"
@@ -7789,17 +7840,17 @@ underscore@~1.4.4:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.4.4.tgz#61a6a32010622afa07963bf325203cf12239d604"
 
-uniforms-bootstrap4@^1.14.0:
-  version "1.18.2"
-  resolved "https://registry.yarnpkg.com/uniforms-bootstrap4/-/uniforms-bootstrap4-1.18.2.tgz#8f8e1018f2e4143980fafb53a2c79fbef75a0e4c"
+uniforms-bootstrap4@^1.19.1:
+  version "1.19.1"
+  resolved "https://registry.yarnpkg.com/uniforms-bootstrap4/-/uniforms-bootstrap4-1.19.1.tgz#653321ed0d14edf8034c3026b40cce2aa4827b5c"
   dependencies:
     babel-runtime "^6.20.0"
     classnames "^2.2.5"
     prop-types "^15.5.7"
 
-uniforms@^1.14.0:
-  version "1.18.2"
-  resolved "https://registry.yarnpkg.com/uniforms/-/uniforms-1.18.2.tgz#85cff0e42ba1ffcf6b11f262b37ee819e9bd95c1"
+uniforms@^1.19.1:
+  version "1.19.1"
+  resolved "https://registry.yarnpkg.com/uniforms/-/uniforms-1.19.1.tgz#5b9e4cb1024783819cd0a5b2c84d6bb76725186c"
   dependencies:
     babel-runtime "^6.20.0"
     lodash.clonedeep "^4.5.0"
