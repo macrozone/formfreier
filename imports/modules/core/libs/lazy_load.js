@@ -1,6 +1,8 @@
 import Loadable from 'react-loadable';
 
-export default promise => Loadable({
-  loader: () => promise,
+export default (loader, options = {
   LoadingComponent: () => null,
+}) => Loadable({
+  loader,
+  ...options,
 });

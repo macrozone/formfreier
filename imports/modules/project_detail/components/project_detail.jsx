@@ -35,7 +35,7 @@ const Content = styled.p`
 const ProjectDetailDescription = styled.div`
   ${scrollBox}
   ${breakpoint('lg')`
-    flex: 7;
+    flex: 5;
     order: 2;
   `}
 `;
@@ -44,7 +44,7 @@ const ProjectMedia = styled.div`
   min-width: 180px;
   ${scrollBox}
   ${breakpoint('lg')`
-    flex: 5;
+    flex: 7;
     order: 1;
   `}
 `;

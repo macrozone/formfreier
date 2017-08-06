@@ -7,3 +7,6 @@ import ButtonGroup from './button_group';
 import IfAdmin from './if_admin';
 import LinkButton from './link_button';
 import Header from './header';
+import './button';
+import './heading';
+import './heading_2';

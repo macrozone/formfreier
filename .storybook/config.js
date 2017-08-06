@@ -18,6 +18,7 @@ addDecorator(story => (
 ));
 
 function loadStories() {
+  require('../imports/modules/cm/components/.stories/index.js');
   require('../imports/modules/project_detail/components/.stories/index.js');
   require('../imports/modules/admin/components/.stories/index.js');
   require('../imports/modules/project_overview/components/.stories/index.js');

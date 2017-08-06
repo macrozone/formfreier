@@ -15,7 +15,7 @@ export default {
   },
   colors: {
     black: 'black',
-    grey: '#CFCFCE',
+    grey: '#CCCCCC',
   },
   paddings: {
     default: css`

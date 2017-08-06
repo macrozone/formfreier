@@ -1,39 +1,46 @@
-import { Accounts } from 'meteor/accounts-base';
-import { Meteor } from 'meteor/meteor';
-import { ReactiveVar } from 'meteor/reactive-var';
-import { Tracker } from 'meteor/tracker';
-
-import { FlowRouter } from 'meteor/kadira:flow-router';
 import { I18n } from '@panter/manul-i18n';
-import { MeteorGriddle } from 'meteor/panter:meteor-griddle';
-import { Roles } from 'meteor/alanning:roles';
-import { Slingshot } from 'meteor/edgee:slingshot';
 import { UploadClient } from '@panter/manul-files';
 import ManulRouter from '@panter/manul-router';
 import TranslationStore from '@panter/manul-i18n/dist/stores/collection';
-
 import moment from 'moment';
-import momentDe from 'moment/locale/de';
-import Directives from '/imports/api/files';
+
+import { Accounts } from 'meteor/accounts-base';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Keypress } from 'meteor/panter:keypress';
+import { Meteor } from 'meteor/meteor';
+import { MeteorGriddle } from 'meteor/panter:meteor-griddle';
 import { ReactiveDict } from 'meteor/reactive-dict';
-// import * as ACL from '/imports/api/acl';
+import { ReactiveVar } from 'meteor/reactive-var';
+import { Roles } from 'meteor/alanning:roles';
+import { Slingshot } from 'meteor/edgee:slingshot';
+import { Tracker } from 'meteor/tracker';
 import * as Collections from '/imports/api/collections';
-// import Directives from '/imports/api/slingshot_directives';
+import Directives from '/imports/api/files';
 import * as Methods from '/imports/api/methods';
 import * as Schemas from '/imports/api/schemas';
 
+import ManulDraftContext from './manul_draft_context';
 import createAdminContext from './create_admin_context';
+import localeConfig from './locale_config';
 
 
 export default function () {
   const LocalState = new ReactiveDict();
 
-  moment.defineLocale('de', momentDe);
+  localeConfig.supportedLocaleNames.forEach(
+    ln => moment.defineLocale(ln, localeConfig.supportedLocales[ln].moment)
+  );
+
+
+  const highlightEditable = () => (
+    (Meteor.isDevelopment || Roles.userIsInRole(Meteor.userId(), 'admin')) && Keypress.is(Keypress.Keys.Alt)
+  );
 
   const i18n = new I18n({
-    supportedLocales: ['de'],
-    defaultLocale: 'de',
+    supportedLocales: localeConfig.supportedLocaleNames,
+    defaultLocale: localeConfig.defaultLocale,
     useFallbackForMissing: true,
+    highlightEditable,
     shouldShowKeysAsFallback: () => Meteor.isDevelopment || Roles.userIsInRole(Meteor.userId(), 'admin'),
     translationStore: new TranslationStore({
       Meteor,
@@ -61,6 +68,7 @@ export default function () {
     i18n,
     gotoRoute: manulRouter.go.bind(manulRouter),
     localeRoutes: manulRouter.createLocaleRoutesGroup(),
+    manulDraft: ManulDraftContext({ highlightEditable }),
     Config: Collections.Config,
     Roles,
     Accounts,

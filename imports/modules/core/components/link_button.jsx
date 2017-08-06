@@ -1,9 +1,7 @@
-import { Button } from 'antd';
-import { T } from '@panter/manul-i18n';
-import React from 'react';
-import styled, { css } from 'styled-components';
-import { pick, compose } from 'lodash/fp';
 import { mapProps } from 'recompose';
+import { pick, compose } from 'lodash/fp';
+
+import Button from './button';
 
 const pickProps = compose(mapProps, pick);
 
