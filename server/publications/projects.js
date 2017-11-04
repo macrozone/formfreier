@@ -1,6 +1,7 @@
-import { Projects } from '../../imports/api/collections';
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
+
+import { Projects } from '../../imports/api/collections';
 
 export default () => {
   Meteor.publish('projects.all', function () {

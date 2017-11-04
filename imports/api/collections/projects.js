@@ -5,27 +5,27 @@ import SimpleSchema from 'simpl-schema';
 import Media from '../schemas/media';
 import { Mongo } from 'meteor/mongo';
 
-
 const Projects = new Mongo.Collection('projects');
 
-
-Projects.attachSchema(new SimpleSchema({
-  _id: {
-    type: String,
-    uniforms: () => null,
-    optional: true,
-  },
-  title: String,
-  date: Date,
-  media: {
-    type: Array,
-    optional: true,
-    defaultValue: [],
-  },
-  'media.$': {
-    type: Media,
-  },
-
-}));
+const MediaWithId = new SimpleSchema({ _id: String }).extend(Media);
+Projects.attachSchema(
+  new SimpleSchema({
+    _id: {
+      type: String,
+      uniforms: () => null,
+      optional: true,
+    },
+    title: String,
+    date: Date,
+    media: {
+      type: Array,
+      optional: true,
+      defaultValue: [],
+    },
+    'media.$': {
+      type: MediaWithId,
+    },
+  })
+);
 
 export default Projects;

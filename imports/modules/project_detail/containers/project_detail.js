@@ -1,5 +1,6 @@
-import { useDeps, composeAll, composeWithTracker, compose } from 'mantra-core';
 import { setComposerStub } from 'react-komposer';
+import { useDeps, composeAll, composeWithTracker } from 'mantra-core';
+
 import ProjectDetail from '../components/project_detail.jsx';
 
 export const composer = ({ context, projectId }, onData) => {
@@ -7,12 +8,15 @@ export const composer = ({ context, projectId }, onData) => {
   if (projectId) {
     Meteor.subscribe('projects.one', projectId);
     const project = Collections.Projects.findOne(projectId);
+
     onData(null, project);
   }
 };
 
 export const depsMapper = (context, actions) => ({
   context: () => context,
+  destroyProject: actions.projects.destroyProject,
+  reorderMedia: actions.projects.reorderMedia,
 });
 
 const ProjectDetailContainer = composeAll(
@@ -20,8 +24,6 @@ const ProjectDetailContainer = composeAll(
   useDeps(depsMapper)
 )(ProjectDetail);
 
-setComposerStub(ProjectDetailContainer, ({ }) => ({
-
-}));
+setComposerStub(ProjectDetailContainer, ({}) => ({}));
 
 export default ProjectDetailContainer;

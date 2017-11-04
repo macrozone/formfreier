@@ -23,25 +23,24 @@ import ManulDraftContext from './manul_draft_context';
 import createAdminContext from './create_admin_context';
 import localeConfig from './locale_config';
 
-
 export default function () {
   const LocalState = new ReactiveDict();
 
-  localeConfig.supportedLocaleNames.forEach(
-    ln => moment.defineLocale(ln, localeConfig.supportedLocales[ln].moment)
+  localeConfig.supportedLocaleNames.forEach(ln =>
+    moment.defineLocale(ln, localeConfig.supportedLocales[ln].moment)
   );
 
-
-  const highlightEditable = () => (
-    (Meteor.isDevelopment || Roles.userIsInRole(Meteor.userId(), 'admin')) && Keypress.is(Keypress.Keys.Alt)
-  );
+  const highlightEditable = () =>
+    (Meteor.isDevelopment || Roles.userIsInRole(Meteor.userId(), 'admin')) &&
+    Keypress.is(Keypress.Keys.Alt);
 
   const i18n = new I18n({
     supportedLocales: localeConfig.supportedLocaleNames,
     defaultLocale: localeConfig.defaultLocale,
     useFallbackForMissing: true,
     highlightEditable,
-    shouldShowKeysAsFallback: () => Meteor.isDevelopment || Roles.userIsInRole(Meteor.userId(), 'admin'),
+    shouldShowKeysAsFallback: () =>
+      Meteor.isDevelopment || Roles.userIsInRole(Meteor.userId(), 'admin'),
     translationStore: new TranslationStore({
       Meteor,
       Tracker,
@@ -50,9 +49,7 @@ export default function () {
     }),
   });
 
-  const manulRouter = new ManulRouter(
-    { FlowRouter, Meteor, i18n },
-  );
+  const manulRouter = new ManulRouter({ FlowRouter, Meteor, i18n });
 
   i18n.onChangeLocale(locale => moment.locale(locale));
 
