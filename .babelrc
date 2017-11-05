@@ -8,6 +8,6 @@
     "transform-class-properties",
     "transform-object-rest-spread",
     "add-react-displayname",
-    "styled-components-named"
+    "babel-plugin-styled-components"
   ]
 }

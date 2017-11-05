@@ -10,7 +10,11 @@ import MediaDropZone from '../containers/media_drop_zone';
 import MediaList from './media_list';
 import breakpoint from '../../../configs/breakpoint';
 
-const ProjectDetailBase = styled.div``;
+const ProjectDetailBase = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+`;
 
 const ProjectDetailContent = styled.div`
   display: flex;
@@ -72,7 +76,7 @@ const ProjectDetail = withTheme(
       <IfAdmin>
         <AdminActions>
           <LinkButton
-            bsStyle="primary"
+            bsStyle="default"
             routeName="project.edit"
             params={{ projectId: _id }}
           >
