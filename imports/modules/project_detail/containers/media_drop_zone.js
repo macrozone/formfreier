@@ -5,7 +5,6 @@ import { withUploader } from '@panter/manul-files';
 
 import MediaDropZone from '../components/media_drop_zone.jsx';
 
-
 export const composer = ({ context }, onData) => {
   const { Meteor, Collections } = context();
 
@@ -20,18 +19,15 @@ export const depsMapper = (context, actions) => ({
 const MediaDropZoneContainer = composeAll(
   composeWithTracker(composer),
   withHandlers({
-    addMedia: ({ upload, addMediaToProject, projectId }) => (
-      file => upload(file,
-        (error, fileUrl) => addMediaToProject({ projectId, media: { fileUrl } })
-      )
-    ),
+    addMedia: ({ upload, addMediaToProject, projectId }) => file =>
+      upload(file, (error, fileUrl) =>
+        addMediaToProject({ projectId, media: { fileUrl } })
+      ),
   }),
   withUploader,
-  useDeps(depsMapper),
+  useDeps(depsMapper)
 )(MediaDropZone);
 
-setComposerStub(MediaDropZoneContainer, ({ }) => ({
-
-}));
+setComposerStub(MediaDropZoneContainer, ({}) => ({}));
 
 export default MediaDropZoneContainer;

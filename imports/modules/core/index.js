@@ -1,25 +1,15 @@
 import actions from './actions';
 import routes from './routes.jsx';
 
-  /* global document, window*/
+/* global document, window*/
 
-
-const onEscPressed = (callback) => {
+const onCrtlPressed = (callback) => {
   document.onkeydown = function (evt) {
-    /* eslint no-param-reassign: 0*/
-    evt = evt || window.event;
-    let isEscape = false;
-    if ('key' in evt) {
-      isEscape = (evt.key === 'Escape' || evt.key === 'Esc');
-    } else {
-      isEscape = (evt.keyCode === 27);
-    }
-    if (isEscape) {
+    if (evt.ctrlKey) {
       callback();
     }
   };
 };
-
 
 export default {
   routes,
@@ -35,7 +25,7 @@ export default {
         keysPressed = 0;
       }, 1000);
     };
-    onEscPressed(() => {
+    onCrtlPressed(() => {
       startClearTimeout();
       keysPressed += 1;
       if (keysPressed >= KEYS_NEEDED) {
