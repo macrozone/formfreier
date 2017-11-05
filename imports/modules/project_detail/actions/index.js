@@ -15,6 +15,11 @@ export default {
         });
       }
     },
+    destroyMedia({ Methods, manulRouter }, { _id, projectId }) {
+      if (window.confirm('Bisch du ganz sicher, Sandro? 😱')) {
+        Methods.projects.destroyMedium.call({ _id, projectId });
+      }
+    },
     reorderMedia(
       { Methods, manulRouter },
       { projectId, startIndex, endIndex }

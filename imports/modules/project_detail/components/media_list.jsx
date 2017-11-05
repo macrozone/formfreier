@@ -2,6 +2,7 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import React from 'react';
 import styled, { withTheme } from 'styled-components';
 
+import Button from '../../core/components/button';
 import MediumBox from '../../core/components/medium_box';
 
 const getItemStyle = ({
@@ -17,12 +18,12 @@ const getItemStyle = ({
     ? {
       borderColor: 'white',
       borderStyle: 'solid',
-      borderWidth: `${theme.gutterH}px ${theme.gutterH}px`,
+      borderWidth: `${theme.gutterH}px ${theme.gutterV}px`,
     }
     : {}),
 
   background: isDragging ? 'white' : null,
-
+  position: 'relative',
   // styles we need to apply on draggables
   ...draggableStyle,
   left: `calc(100vw + ${draggableStyle.left - theme.verticalBarWidth}px)`,
@@ -36,7 +37,16 @@ const ProjectMediumBox = styled(MediumBox)`
 
 /* eslint no-shadow: 0*/
 const MediaList = withTheme(
-  ({ firstIsSpecial, reorderEnabled, theme, media, onReorder }) => (
+  ({
+    firstIsSpecial,
+    allowDelete,
+    reorderEnabled,
+    theme,
+    projectId,
+    media,
+    onReorder,
+    destroyMedia,
+  }) => (
     <DragDropContext
       onDragEnd={(result) => {
         // dropped outside the list
@@ -74,6 +84,21 @@ const MediaList = withTheme(
                       })}
                       {...provided.dragHandleProps}
                     >
+                      {allowDelete && (
+                        <Button
+                          onClick={() =>
+                            destroyMedia({ _id: medium._id, projectId })}
+                          style={{
+                            zIndex: 10,
+                            top: 5,
+                            left: 5,
+                            position: 'absolute',
+                          }}
+                        >
+                          🗑️
+                        </Button>
+                      )}
+
                       <ProjectMediumBox medium={medium} />
                     </div>
                     {provided.placeholder}

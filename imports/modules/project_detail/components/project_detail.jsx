@@ -71,7 +71,16 @@ const AdminActions = styled.div`
 `;
 
 const ProjectDetail = withTheme(
-  ({ theme, _id, title, date, media = [], reorderMedia, destroyProject }) => (
+  ({
+    theme,
+    _id,
+    title,
+    date,
+    media = [],
+    reorderMedia,
+    destroyProject,
+    destroyMedia,
+  }) => (
     <ProjectDetailBase>
       <IfAdmin>
         <AdminActions>
@@ -113,9 +122,12 @@ const ProjectDetail = withTheme(
           </IfAdmin>
           <IfAdmin elseContent={<MediaList media={media.slice(1)} />}>
             <MediaList
+              projectId={_id}
+              destroyMedia={destroyMedia}
               media={media}
               reorderEnabled
               firstIsSpecial
+              allowDelete
               onReorder={({ startIndex, endIndex }) =>
                 reorderMedia({
                   projectId: _id,

@@ -24,8 +24,13 @@ export default {
       Projects.update(projectId, {
         $push: {
           media: {
-            ...media,
-            _id: Random.id(),
+            $each: [
+              {
+                ...media,
+                _id: Random.id(),
+              },
+            ],
+            $position: 0,
           },
         },
       });
@@ -39,6 +44,17 @@ export default {
     },
     run({ projectId }) {
       Projects.remove(projectId);
+    },
+  }),
+  destroyMedium: new BaseMethod({
+    name: 'projects.destroyMedium',
+    allow: allowForAdmins,
+    schema: {
+      projectId: String,
+      _id: String,
+    },
+    run({ projectId, _id }) {
+      Projects.update(projectId, { $pull: { media: { _id } } });
     },
   }),
   reorderMedia: new BaseMethod({

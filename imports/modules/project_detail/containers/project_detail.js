@@ -16,6 +16,7 @@ export const composer = ({ context, projectId }, onData) => {
 export const depsMapper = (context, actions) => ({
   context: () => context,
   destroyProject: actions.projects.destroyProject,
+  destroyMedia: actions.projects.destroyMedia,
   reorderMedia: actions.projects.reorderMedia,
 });
 
